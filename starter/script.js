@@ -1,22 +1,21 @@
-var userInput = document.getElementById("search-input");
-var searchBtn = document.getElementById("search-button");
-var city = userInput.value;
-var APIKey = "fde4deb2cdcb435337794609dc049da1";
-var lat;
-var lon;
+const userInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-button");
+const city = userInput.value;
+const APIKey = "fde4deb2cdcb435337794609dc049da1";
+let lat;
+let lon;
 
 
 
-searchBtn.onclick = myFunction();
-function myFunction(){
-  var convertCoordinates =
-	"http://api.openweathermap.org/geo/1.0/direct?q={" +
+// searchBtn.onclick = myFunction();
+// function myFunction(){
+  var queryURL =
+	"http://api.openweathermap.org/geo/1.0/direct?q=" +
 	city +
-	"},{},{}&limit={}&appid={" +
-	APIKey +
-	"}";
-console.log(convertCoordinates);
-}
+	"&appid=" +
+	APIKey;
+console.log(queryURL);
+// }
 
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
